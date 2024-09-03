@@ -8770,6 +8770,19 @@ type UpdSos4 struct {
 
 func (UpdSos4) classID() uint16 { return 0x1409 }
 
+// UBX-MON-VER firmware version.
+// Class/ID 0x0A 0x04 (8 bytes)
+type UbxMonVer struct {
+    SwVersion [30]byte // Software version, null terminated.
+    HwVersion [30]byte // Hardware version, null terminated.
+    Extension []*VerExtension // Extended software information strings.
+}
+type VerExtension struct {
+  Info [30]byte // Null terminated string information
+}
+
+func (UbxMonVer) classID() uint16 { return 0x0A04 }
+
 func mkMsg(classId, sz uint16, frame []byte) Message {
 	switch classId {
 
@@ -9392,6 +9405,9 @@ func mkMsg(classId, sz uint16, frame []byte) Message {
 
 	case 0x1409:
 		return mkUpdSos(sz, frame)
+
+    case  0x0A04:
+        return new(UbxMonVer)
 
 	}
 	return nil
