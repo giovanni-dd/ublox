@@ -8,7 +8,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/daedaleanai/ublox"
+	"github.com/giovanni-dd/ublox"
 )
 
 func main() {

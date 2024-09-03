@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	. "github.com/daedaleanai/ublox/ubx"
+	. "github.com/giovanni-dd/ublox/ubx"
 )
 
 func main() {
