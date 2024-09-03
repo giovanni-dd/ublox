@@ -10,8 +10,8 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/daedaleanai/ublox/nmea"
-	"github.com/daedaleanai/ublox/ubx"
+	"github.com/giovanni-dd/ublox/nmea"
+	"github.com/giovanni-dd/ublox/ubx"
 )
 
 // A Decoder scans an io stream into UBX (0xB5-0x62 separated) or NMEA ("$xxx,,,,*FF\r\n") frames.
