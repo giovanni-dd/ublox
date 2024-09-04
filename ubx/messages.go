@@ -8781,7 +8781,7 @@ type VerExtension struct {
   Info [30]byte // Null terminated string information
 }
 
-func (UbxMonVer) classID() uint16 { return 0x0A04 }
+func (UbxMonVer) classID() uint16 { return 0x040A }
 
 func mkMsg(classId, sz uint16, frame []byte) Message {
 	switch classId {
@@ -9406,7 +9406,7 @@ func mkMsg(classId, sz uint16, frame []byte) Message {
 	case 0x1409:
 		return mkUpdSos(sz, frame)
 
-    case  0x0A04:
+    case  0x040A:
         return new(UbxMonVer)
 
 	}
